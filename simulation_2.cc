@@ -189,8 +189,8 @@ int main(int argc, char *argv[]) {
 
     std::vector<Vector> clientPositions = {
         Vector(5.0, 5.0, 0.0),
-        Vector(10.0, -5.0, 0.0),
-        Vector(-5.0, -10.0, 0.0)
+        Vector(10.0, 15.0, 0.0),
+        Vector(15.0, 10.0, 0.0)
     };
 
     for (uint32_t i = 0; i < clientNodes.GetN(); ++i) {
@@ -222,6 +222,8 @@ int main(int argc, char *argv[]) {
         }
         std::cout << "-----------------------" << std::endl;
     }
+
+    monitor->SerializeToXmlFile("simulation2.flowmon", false, false);
 
     Simulator::Destroy();
     return 0;
